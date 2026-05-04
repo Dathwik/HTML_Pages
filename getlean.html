@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lean Plan — May 4 to June 21, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a0a;
+    --card: #111111;
+    --card2: #161616;
+    --border: #222;
+    --accent: #c8f562;
+    --accent2: #5bf5c8;
+    --accent3: #f5a05b;
+    --red: #f55b5b;
+    --text: #f0f0f0;
+    --muted: #888;
+    --push: #f55b5b22;
+    --push-border: #f55b5b;
+    --pull: #5b9ef522;
+    --pull-border: #5b9ef5;
+    --legs: #c8f56222;
+    --legs-border: #c8f562;
+    --rest: #88888822;
+    --rest-border: #888;
+  }
+
+- { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+background: var(–bg);
+color: var(–text);
+font-family: ‘DM Sans’, sans-serif;
+min-height: 100vh;
+padding: 40px 24px;
+}
+
+/* HEADER */
+.header {
+max-width: 1100px;
+margin: 0 auto 48px;
+display: grid;
+grid-template-columns: 1fr auto;
+align-items: end;
+gap: 24px;
+border-bottom: 1px solid var(–border);
+padding-bottom: 32px;
+}
+
+.header-left h1 {
+font-family: ‘Bebas Neue’, sans-serif;
+font-size: clamp(52px, 8vw, 96px);
+line-height: 0.9;
+letter-spacing: 2px;
+color: var(–accent);
+}
+
+.header-left h1 span {
+color: var(–text);
+display: block;
+}
+
+.header-left p {
+margin-top: 12px;
+color: var(–muted);
+font-size: 13px;
+letter-spacing: 2px;
+text-transform: uppercase;
+font-family: ‘DM Mono’, monospace;
+}
+
+.header-right {
+display: flex;
+flex-direction: column;
+gap: 8px;
+align-items: flex-end;
+}
+
+.stat-pill {
+background: var(–card);
+border: 1px solid var(–border);
+border-radius: 100px;
+padding: 8px 16px;
+font-family: ‘DM Mono’, monospace;
+font-size: 12px;
+color: var(–muted);
+white-space: nowrap;
+}
+
+.stat-pill strong {
+color: var(–accent);
+font-size: 14px;
+}
+
+/* MACROS BAR */
+.macros-bar {
+max-width: 1100px;
+margin: 0 auto 48px;
+background: var(–card);
+border: 1px solid var(–border);
+border-radius: 16px;
+padding: 28px 32px;
+display: grid;
+grid-template-columns: repeat(4, 1fr) 1.5fr;
+gap: 0;
+}
+
+.macro-item {
+padding: 0 24px;
+border-right: 1px solid var(–border);
+}
+
+.macro-item:first-child { padding-left: 0; }
+.macro-item:last-child { border-right: none; }
+
+.macro-item .label {
+font-size: 10px;
+letter-spacing: 2px;
+text-transform: uppercase;
+color: var(–muted);
+font-family: ‘DM Mono’, monospace;
+margin-bottom: 6px;
+}
+
+.macro-item .value {
+font-family: ‘Bebas Neue’, sans-serif;
+font-size: 38px;
+line-height: 1;
+color: var(–text);
+}
+
+.macro-item .unit {
+font-size: 13px;
+color: var(–muted);
+margin-left: 4px;
+font-family: ‘DM Sans’, sans-serif;
+}
+
+.macro-item.highlight .value { color: var(–accent); }
+
+.macro-meals {
+padding-left: 24px;
+}
+
+.macro-meals .label {
+font-size: 10px;
+letter-spacing: 2px;
+text-transform: uppercase;
+color: var(–muted);
+font-family: ‘DM Mono’, monospace;
+margin-bottom: 10px;
+}
+
+.meal-row {
+display: flex;
+justify-content: space-between;
+font-size: 12px;
+color: var(–muted);
+padding: 3px 0;
+border-bottom: 1px solid #1a1a1a;
+}
+
+.meal-row span { color: var(–text); font-size: 11px; }
+
+/* LEGEND */
+.legend {
+max-width: 1100px;
+margin: 0 auto 32px;
+display: flex;
+gap: 16px;
+flex-wrap: wrap;
+}
+
+.legend-item {
+display: flex;
+align-items: center;
+gap: 8px;
+font-size: 12px;
+color: var(–muted);
+font-family: ‘DM Mono’, monospace;
+}
+
+.legend-dot {
+width: 10px;
+height: 10px;
+border-radius: 2px;
+}
+
+/* WEEKS */
+.weeks {
+max-width: 1100px;
+margin: 0 auto;
+display: flex;
+flex-direction: column;
+gap: 32px;
+}
+
+.week-block {
+border: 1px solid var(–border);
+border-radius: 16px;
+overflow: hidden;
+}
+
+.week-header {
+background: var(–card2);
+padding: 16px 24px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+border-bottom: 1px solid var(–border);
+}
+
+.week-header h2 {
+font-family: ‘Bebas Neue’, sans-serif;
+font-size: 22px;
+letter-spacing: 2px;
+color: var(–text);
+}
+
+.week-header .week-dates {
+font-family: ‘DM Mono’, monospace;
+font-size: 11px;
+color: var(–muted);
+letter-spacing: 1px;
+}
+
+.week-header .week-deficit {
+font-family: ‘DM Mono’, monospace;
+font-size: 11px;
+color: var(–accent2);
+background: #5bf5c822;
+border: 1px solid var(–accent2);
+border-radius: 100px;
+padding: 4px 12px;
+}
+
+.days-grid {
+display: grid;
+grid-template-columns: repeat(7, 1fr);
+}
+
+.day-cell {
+padding: 16px 14px;
+border-right: 1px solid var(–border);
+min-height: 180px;
+}
+
+.day-cell:last-child { border-right: none; }
+
+.day-name {
+font-family: ‘DM Mono’, monospace;
+font-size: 10px;
+letter-spacing: 2px;
+text-transform: uppercase;
+color: var(–muted);
+margin-bottom: 6px;
+}
+
+.day-date {
+font-family: ‘Bebas Neue’, sans-serif;
+font-size: 24px;
+margin-bottom: 12px;
+color: var(–text);
+}
+
+.session-badge {
+display: inline-block;
+font-family: ‘DM Mono’, monospace;
+font-size: 10px;
+letter-spacing: 1px;
+text-transform: uppercase;
+border-radius: 4px;
+padding: 3px 8px;
+margin-bottom: 10px;
+font-weight: 500;
+}
+
+.badge-push { background: var(–push); color: var(–push-border); border: 1px solid var(–push-border); }
+.badge-pull { background: var(–pull); color: var(–pull-border); border: 1px solid var(–pull-border); }
+.badge-legs { background: var(–legs); color: var(–legs-border); border: 1px solid var(–legs-border); }
+.badge-rest { background: var(–rest); color: var(–rest-border); border: 1px solid var(–rest-border); }
+
+.session-detail {
+font-size: 11px;
+color: var(–muted);
+line-height: 1.7;
+}
+
+.session-detail strong {
+display: block;
+color: var(–text);
+font-size: 11px;
+margin-top: 6px;
+margin-bottom: 2px;
+}
+
+.cardio-tag {
+display: inline-block;
+font-family: ‘DM Mono’, monospace;
+font-size: 9px;
+background: #f5a05b22;
+color: var(–accent3);
+border: 1px solid var(–accent3);
+border-radius: 4px;
+padding: 2px 6px;
+margin-top: 6px;
+}
+
+.day-cell.today .day-date {
+color: var(–accent);
+}
+
+/* DIET SECTION */
+.diet-section {
+max-width: 1100px;
+margin: 48px auto 0;
+border: 1px solid var(–border);
+border-radius: 16px;
+overflow: hidden;
+}
+
+.diet-header {
+background: var(–card2);
+padding: 20px 28px;
+border-bottom: 1px solid var(–border);
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.diet-header h2 {
+font-family: ‘Bebas Neue’, sans-serif;
+font-size: 28px;
+letter-spacing: 2px;
+color: var(–accent);
+}
+
+.diet-header p {
+font-family: ‘DM Mono’, monospace;
+font-size: 11px;
+color: var(–muted);
+letter-spacing: 1px;
+}
+
+.diet-grid {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+}
+
+.meal-card {
+padding: 24px;
+border-right: 1px solid var(–border);
+}
+
+.meal-card:last-child { border-right: none; }
+
+.meal-time {
+font-family: ‘DM Mono’, monospace;
+font-size: 10px;
+letter-spacing: 2px;
+text-transform: uppercase;
+color: var(–accent);
+margin-bottom: 6px;
+}
+
+.meal-title {
+font-family: ‘Bebas Neue’, sans-serif;
+font-size: 22px;
+color: var(–text);
+margin-bottom: 14px;
+letter-spacing: 1px;
+}
+
+.meal-items {
+list-style: none;
+display: flex;
+flex-direction: column;
+gap: 7px;
+margin-bottom: 16px;
+}
+
+.meal-items li {
+font-size: 12px;
+color: var(–muted);
+padding-left: 12px;
+position: relative;
+line-height: 1.4;
+}
+
+.meal-items li::before {
+content: ‘—’;
+position: absolute;
+left: 0;
+color: var(–border);
+font-size: 10px;
+top: 1px;
+}
+
+.meal-macros {
+display: flex;
+gap: 10px;
+flex-wrap: wrap;
+}
+
+.macro-chip {
+font-family: ‘DM Mono’, monospace;
+font-size: 10px;
+padding: 3px 8px;
+border-radius: 4px;
+background: var(–card2);
+border: 1px solid var(–border);
+color: var(–muted);
+}
+
+.macro-chip.p { border-color: var(–accent); color: var(–accent); }
+
+/* FOOTER */
+.footer {
+max-width: 1100px;
+margin: 48px auto 0;
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 24px;
+}
+
+.info-box {
+background: var(–card);
+border: 1px solid var(–border);
+border-radius: 16px;
+padding: 24px;
+}
+
+.info-box h3 {
+font-family: ‘Bebas Neue’, sans-serif;
+font-size: 20px;
+letter-spacing: 1px;
+color: var(–accent);
+margin-bottom: 14px;
+}
+
+.info-box ul {
+list-style: none;
+display: flex;
+flex-direction: column;
+gap: 9px;
+}
+
+.info-box ul li {
+font-size: 12px;
+color: var(–muted);
+padding-left: 16px;
+position: relative;
+line-height: 1.5;
+}
+
+.info-box ul li::before {
+content: ‘→’;
+position: absolute;
+left: 0;
+color: var(–accent);
+font-size: 11px;
+}
+
+.info-box ul li strong { color: var(–text); }
+
+.projection-box {
+background: linear-gradient(135deg, #0f1f0a, #0a1a14);
+border: 1px solid var(–accent);
+border-radius: 16px;
+padding: 28px;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+}
+
+.projection-box h3 {
+font-family: ‘Bebas Neue’, sans-serif;
+font-size: 20px;
+letter-spacing: 1px;
+color: var(–accent);
+margin-bottom: 20px;
+}
+
+.proj-row {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 10px 0;
+border-bottom: 1px solid #1e2e1a;
+font-size: 12px;
+}
+
+.proj-row:last-child { border-bottom: none; }
+.proj-row .pk { color: var(–muted); font-family: ‘DM Mono’, monospace; font-size: 11px; }
+.proj-row .pv { color: var(–text); font-weight: 500; }
+.proj-row .pv.green { color: var(–accent); font-family: ‘Bebas Neue’, sans-serif; font-size: 20px; }
+
+@media print {
+body { background: #fff; color: #000; padding: 20px; }
+.week-block, .diet-section, .info-box, .projection-box, .macros-bar { page-break-inside: avoid; }
+}
+
+@media (max-width: 900px) {
+.days-grid { grid-template-columns: repeat(4, 1fr); }
+.diet-grid { grid-template-columns: 1fr 1fr; }
+.macros-bar { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.footer { grid-template-columns: 1fr; }
+.header { grid-template-columns: 1fr; }
+.header-right { align-items: flex-start; }
+}
+</style>
+
+</head>
+<body>
+
+<!-- HEADER -->
+
+<div class="header">
+  <div class="header-left">
+    <h1><span>GET</span>LEAN</h1>
+    <p>May 4 → June 21, 2026 &nbsp;·&nbsp; 48 Days &nbsp;·&nbsp; 170 → 155 lbs</p>
+  </div>
+  <div class="header-right">
+    <div class="stat-pill">Start Weight <strong>170 lbs</strong></div>
+    <div class="stat-pill">Target Weight <strong>155 lbs</strong></div>
+    <div class="stat-pill">Weekly Loss <strong>~2.9–3.2 lbs</strong></div>
+    <div class="stat-pill">Daily Deficit <strong>~1,530 cal</strong></div>
+  </div>
+</div>
+
+<!-- MACROS -->
+
+<div class="macros-bar">
+  <div class="macro-item highlight">
+    <div class="label">Calories</div>
+    <div class="value">1,870<span class="unit">cal</span></div>
+  </div>
+  <div class="macro-item">
+    <div class="label">Protein</div>
+    <div class="value">150<span class="unit">g</span></div>
+  </div>
+  <div class="macro-item">
+    <div class="label">Carbs</div>
+    <div class="value">198<span class="unit">g</span></div>
+  </div>
+  <div class="macro-item">
+    <div class="label">Fat</div>
+    <div class="value">57<span class="unit">g</span></div>
+  </div>
+  <div class="macro-meals">
+    <div class="label">Meal Breakdown</div>
+    <div class="meal-row">Breakfast <span>470 cal · 35g P</span></div>
+    <div class="meal-row">Lunch <span>520 cal · 38g P</span></div>
+    <div class="meal-row">Snack <span>360 cal · 23g P</span></div>
+    <div class="meal-row">Dinner <span>520 cal · 54g P</span></div>
+  </div>
+</div>
+
+<!-- LEGEND -->
+
+<div class="legend">
+  <div class="legend-item"><div class="legend-dot" style="background:#f55b5b"></div>Push — Chest / Shoulders / Tris</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#5b9ef5"></div>Pull — Back / Biceps</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#c8f562"></div>Legs — Quads / Hams / Glutes</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#888"></div>Rest Day</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#f5a05b"></div>Cardio Finisher</div>
+</div>
+
+<!-- WEEKS -->
+
+<div class="weeks">
+
+  <!-- WEEK 1 -->
+
+  <div class="week-block">
+    <div class="week-header">
+      <h2>Week 1</h2>
+      <span class="week-dates">May 4 – May 10</span>
+      <span class="week-deficit">Est. loss: ~2.9 lbs</span>
+    </div>
+    <div class="days-grid">
+      <div class="day-cell today">
+        <div class="day-name">Mon</div>
+        <div class="day-date">4</div>
+        <div class="session-badge badge-push">Push</div>
+        <div class="session-detail">
+          <strong>Strength</strong>
+          Bench Press · Incline DB Press<br>OHP · Lateral Raises<br>Tricep Pushdown · OH Extension
+          <div class="cardio-tag">HIIT 20 min · ~300 cal</div>
+        </div>
+      </div>
+      <div class="day-cell">
+        <div class="day-name">Tue</div>
+        <div class="day-date">5</div>
+        <div class="session-badge badge-pull">Pull</div>
+        <div class="session-detail">
+          <strong>Strength</strong>
+          Barbell Row · Lat Pulldown<br>Cable Row · Face Pulls<br>DB Curl · Hammer Curl
+          <div class="cardio-tag">Steady 25 min · ~275 cal</div>
+        </div>
+      </div>
+      <div class="day-cell">
+        <div class="day-name">Wed</div>
+        <div class="day-date">6</div>
+        <div class="session-badge badge-legs">Legs</div>
+        <div class="session-detail">
+          <strong>Strength</strong>
+          Back Squat · RDL · Leg Press<br>Leg Curl · Lunges · Calf Raises
+          <div class="cardio-tag">Bike 20 min · ~225 cal</div>
+        </div>
+      </div>
+      <div class="day-cell">
+        <div class="day-name">Thu</div>
+        <div class="day-date">7</div>
+        <div class="session-badge badge-push">Push</div>
+        <div class="session-detail">
+          <strong>Strength</strong>
+          Bench Press · Incline DB Press<br>OHP · Lateral Raises<br>Tricep Pushdown · OH Extension
+          <div class="cardio-tag">HIIT 20 min · ~300 cal</div>
+        </div>
+      </div>
+      <div class="day-cell">
+        <div class="day-name">Fri</div>
+        <div class="day-date">8</div>
+        <div class="session-badge badge-pull">Pull</div>
+        <div class="session-detail">
+          <strong>Strength</strong>
+          Barbell Row · Lat Pulldown<br>Cable Row · Face Pulls<br>DB Curl · Hammer Curl
+          <div class="cardio-tag">Steady 25 min · ~275 cal</div>
+        </div>
+      </div>
+      <div class="day-cell">
+        <div class="day-name">Sat</div>
+        <div class="day-date">9</div>
+        <div class="session-badge badge-legs">Legs</div>
+        <div class="session-detail">
+          <strong>Strength</strong>
+          Back Squat · RDL · Leg Press<br>Leg Curl · Lunges · Calf Raises
+          <div class="cardio-tag">Bike 20 min · ~225 cal</div>
+        </div>
+      </div>
+      <div class="day-cell">
+        <div class="day-name">Sun</div>
+        <div class="day-date">10</div>
+        <div class="session-badge badge-rest">Rest</div>
+        <div class="session-detail">
+          <strong>Active Recovery</strong>
+          Light walk or stretch. Let the muscles rebuild. Stay on diet.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WEEK 2 -->
+
+  <div class="week-block">
+    <div class="week-header">
+      <h2>Week 2</h2>
+      <span class="week-dates">May 11 – May 17</span>
+      <span class="week-deficit">Est. loss: ~3.0 lbs · Target: ~164 lbs</span>
+    </div>
+    <div class="days-grid">
+      <div class="day-cell">
+        <div class="day-name">Mon</div><div class="day-date">11</div>
+        <div class="session-badge badge-push">Push</div>
+        <div class="session-detail"><strong>⬆ Add 5 lbs to main lifts</strong>Progressive overload week.<div class="cardio-tag">HIIT 20 min</div></div>
+      </div>
+      <div class="day-cell">
+        <div class="day-name">Tue</div><div class="day-date">12</div>
+        <div class="session-badge badge-pull">Pull</div>
+        <div class="session-detail"><strong>Strength</strong>All pull movements.<div class="cardio-tag">Steady 25 min</div></div>
+      </div>
+      <div class="day-cell">
+        <div class="day-name">Wed</div><div class="day-date">13</div>
+        <div class="session-badge badge-legs">Legs</div>
+        <div class="session-detail"><strong>Strength</strong>All leg movements.<div class="cardio-tag">Bike 20 min</div></div>
+      </div>
+      <div class="day-cell">
+        <div class="day-name">Thu</div><div class="day-date">14</div>
+        <div class="session-badge badge-push">Push</div>
+        <div class="session-detail"><strong>Strength</strong>All push movements.<div class="cardio-tag">HIIT 20 min</div></div>
+      </div>
+      <div class="day-cell">
+        <div class="day-name">Fri</div><div class="day-date">15</div>
+        <div class="session-badge badge-pull">Pull</div>
+        <div class="session-detail"><strong>Strength</strong>All pull movements.<div class="cardio-tag">Steady 25 min</div></div>
+      </div>
+      <div class="day-cell">
+        <div class="day-name">Sat</div><div class="day-date">16</div>
+        <div class="session-badge badge-legs">Legs</div>
+        <div class="session-detail"><strong>Strength</strong>All leg movements.<div class="cardio-tag">Bike 20 min</div></div>
+      </div>
+      <div class="day-cell">
+        <div class="day-name">Sun</div><div class="day-date">17</div>
+        <div class="session-badge badge-rest">Rest</div>
+        <div class="session-detail"><strong>Weigh in</strong>Record weight. Should be ~164 lbs.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WEEK 3 -->
+
+  <div class="week-block">
+    <div class="week-header">
+      <h2>Week 3</h2>
+      <span class="week-dates">May 18 – May 24</span>
+      <span class="week-deficit">Est. loss: ~3.1 lbs · Target: ~161 lbs</span>
+    </div>
+    <div class="days-grid">
+      <div class="day-cell">
+        <div class="day-name">Mon</div><div class="day-date">18</div>
+        <div class="session-badge badge-push">Push</div>
+        <div class="session-detail"><strong>⬆ Add 5 lbs again</strong>Keep pushing the overload.<div class="cardio-tag">HIIT 20 min</div></div>
+      </div>
+      <div class="day-cell">
+        <div class="day-name">Tue</div><div class="day-date">19</div>
+        <div class="session-badge badge-pull">Pull</div>
+        <div class="session-detail"><strong>Strength</strong>Focus on lat stretch at bottom.<div class="cardio-tag">Steady 25 min</div></div>
+      </div>
+      <div class="day-cell">
+        <div class="day-name">Wed</div><div class="day-date">20</div>
+        <div class="session-badge badge-legs">Legs</div>
+        <div class="session-detail"><strong>Strength</strong>Push depth on squats.<div class="cardio-tag">Bike 20 min</div></div>
+      </div>
+      <div class="day-cell">
+        <div class="day-name">Thu</div><div class="day-date">21</div>
+        <div class="session-badge badge-push">Push</div>
+        <div class="session-detail"><strong>Strength</strong>All push movements.<div class="cardio-tag">HIIT 20 min</div></div>
+      </div>
+      <div class="day-cell">
+        <div class="day-name">Fri</div><div class="day-date">22</div>
+        <div class="session-badge badge-pull">Pull</div>
+        <div class="session-detail"><strong>Strength</strong>All pull movements.<div class="cardio-tag">Steady 25 min</div></div>
+      </div>
+      <div class="day-cell">
+        <div class="day-name">Sat</div><div class="day-date">23</div>
+        <div class="session-badge badge-legs">Legs</div>
+        <div class="session-detail"><strong>Strength</strong>All leg movements.<div class="cardio-tag">Bike 20 min</div></div>
+      </div>
+      <div class="day-cell">
+        <div class="day-name">Sun</div><div class="day-date">24</div>
+        <div class="session-badge badge-rest">Rest</div>
+        <div class="session-detail"><strong>Weigh in</strong>Record weight. Should be ~161 lbs.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WEEK 4 -->
+
+  <div class="week-block">
+    <div class="week-header">
+      <h2>Week 4 — Midpoint Check</h2>
+      <span class="week-dates">May 25 – May 31</span>
+      <span class="week-deficit">Est. loss: ~3.0 lbs · Target: ~158 lbs</span>
+    </div>
+    <div class="days-grid">
+      <div class="day-cell">
+        <div class="day-name">Mon</div><div class="day-date">25</div>
+        <div class="session-badge badge-push">Push</div>
+        <div class="session-detail"><strong>Deload slightly</strong>Same lifts, drop weight 10%.<div class="cardio-tag">HIIT 20 min</div></div>
+      </div>
+      <div class="day-cell">
+        <div class="day-name">Tue</div><div class="day-date">26</div>
+        <div class="session-badge badge-pull">Pull</div>
+        <div class="session-detail"><strong>Strength</strong>Focus on mind-muscle connection.<div class="cardio-tag">Steady 25 min</div></div>
+      </div>
+      <div class="day-cell">
+        <div class="day-name">Wed</div><div class="day-date">27</div>
+        <div class="session-badge badge-legs">Legs</div>
+        <div class="session-detail"><strong>Strength</strong>All leg movements.<div class="cardio-tag">Bike 20 min</div></div>
+      </div>
+      <div class="day-cell">
+        <div class="day-name">Thu</div><div class="day-date">28</div>
+        <div class="session-badge badge-push">Push</div>
+        <div class="session-detail"><strong>Back to full weight</strong>Reload after deload day.<div class="cardio-tag">HIIT 20 min</div></div>
+      </div>
+      <div class="day-cell">
+        <div class="day-name">Fri</div><div class="day-date">29</div>
+        <div class="session-badge badge-pull">Pull</div>
+        <div class="session-detail"><strong>Strength</strong>All pull movements.<div class="cardio-tag">Steady 25 min</div></div>
+      </div>
+      <div class="day-cell">
+        <div class="day-name">Sat</div><div class="day-date">30</div>
+        <div class="session-badge badge-legs">Legs</div>
+        <div class="session-detail"><strong>Strength</strong>All leg movements.<div class="cardio-tag">Bike 20 min</div></div>
+      </div>
+      <div class="day-cell">
+        <div class="day-name">Sun</div><div class="day-date">31</div>
+        <div class="session-badge badge-rest">Rest</div>
+        <div class="session-detail"><strong>Weigh in</strong>Midpoint check. Should be ~158 lbs.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WEEK 5 -->
+
+  <div class="week-block">
+    <div class="week-header">
+      <h2>Week 5 — Final Push Begins</h2>
+      <span class="week-dates">June 1 – June 7</span>
+      <span class="week-deficit">Est. loss: ~3.1 lbs · Target: ~155 lbs</span>
+    </div>
+    <div class="days-grid">
+      <div class="day-cell">
+        <div class="day-name">Mon</div><div class="day-date">1</div>
+        <div class="session-badge badge-push">Push</div>
+        <div class="session-detail"><strong>⬆ New PR attempt</strong>Try new 1-rep maxes on bench.<div class="cardio-tag">HIIT 20 min</div></div>
+      </div>
+      <div class="day-cell">
+        <div class="day-name">Tue</div><div class="day-date">2</div>
+        <div class="session-badge badge-pull">Pull</div>
+        <div class="session-detail"><strong>Strength</strong>All pull movements.<div class="cardio-tag">Steady 25 min</div></div>
+      </div>
+      <div class="day-cell">
+        <div class="day-name">Wed</div><div class="day-date">3</div>
+        <div class="session-badge badge-legs">Legs</div>
+        <div class="session-detail"><strong>Strength</strong>All leg movements.<div class="cardio-tag">Bike 20 min</div></div>
+      </div>
+      <div class="day-cell">
+        <div class="day-name">Thu</div><div class="day-date">4</div>
+        <div class="session-badge badge-push">Push</div>
+        <div class="session-detail"><strong>Strength</strong>All push movements.<div class="cardio-tag">HIIT 20 min</div></div>
+      </div>
+      <div class="day-cell">
+        <div class="day-name">Fri</div><div class="day-date">5</div>
+        <div class="session-badge badge-pull">Pull</div>
+        <div class="session-detail"><strong>Strength</strong>All pull movements.<div class="cardio-tag">Steady 25 min</div></div>
+      </div>
+      <div class="day-cell">
+        <div class="day-name">Sat</div><div class="day-date">6</div>
+        <div class="session-badge badge-legs">Legs</div>
+        <div class="session-detail"><strong>Strength</strong>All leg movements.<div class="cardio-tag">Bike 20 min</div></div>
+      </div>
+      <div class="day-cell">
+        <div class="day-name">Sun</div><div class="day-date">7</div>
+        <div class="session-badge badge-rest">Rest</div>
+        <div class="session-detail"><strong>Weigh in</strong>Should be hitting ~155 lbs. 🎯</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WEEK 6 -->
+
+  <div class="week-block">
+    <div class="week-header">
+      <h2>Week 6 — Lock It In</h2>
+      <span class="week-dates">June 8 – June 14</span>
+      <span class="week-deficit">Maintain deficit · Hold strong</span>
+    </div>
+    <div class="days-grid">
+      <div class="day-cell">
+        <div class="day-name">Mon</div><div class="day-date">8</div>
+        <div class="session-badge badge-push">Push</div>
+        <div class="session-detail"><strong>Strength</strong>All push movements.<div class="cardio-tag">HIIT 20 min</div></div>
+      </div>
+      <div class="day-cell">
+        <div class="day-name">Tue</div><div class="day-date">9</div>
+        <div class="session-badge badge-pull">Pull</div>
+        <div class="session-detail"><strong>Strength</strong>All pull movements.<div class="cardio-tag">Steady 25 min</div></div>
+      </div>
+      <div class="day-cell">
+        <div class="day-name">Wed</div><div class="day-date">10</div>
+        <div class="session-badge badge-legs">Legs</div>
+        <div class="session-detail"><strong>Strength</strong>All leg movements.<div class="cardio-tag">Bike 20 min</div></div>
+      </div>
+      <div class="day-cell">
+        <div class="day-name">Thu</div><div class="day-date">11</div>
+        <div class="session-badge badge-push">Push</div>
+        <div class="session-detail"><strong>Strength</strong>All push movements.<div class="cardio-tag">HIIT 20 min</div></div>
+      </div>
+      <div class="day-cell">
+        <div class="day-name">Fri</div><div class="day-date">12</div>
+        <div class="session-badge badge-pull">Pull</div>
+        <div class="session-detail"><strong>Strength</strong>All pull movements.<div class="cardio-tag">Steady 25 min</div></div>
+      </div>
+      <div class="day-cell">
+        <div class="day-name">Sat</div><div class="day-date">13</div>
+        <div class="session-badge badge-legs">Legs</div>
+        <div class="session-detail"><strong>Strength</strong>All leg movements.<div class="cardio-tag">Bike 20 min</div></div>
+      </div>
+      <div class="day-cell">
+        <div class="day-name">Sun</div><div class="day-date">14</div>
+        <div class="session-badge badge-rest">Rest</div>
+        <div class="session-detail"><strong>Rest</strong>Final week ahead. Stay dialed.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WEEK 7 -->
+
+  <div class="week-block" style="border-color: var(--accent);">
+    <div class="week-header" style="background: linear-gradient(135deg, #0f1f0a, #0a1a14); border-color: var(--accent);">
+      <h2 style="color: var(--accent);">⚡ Week 7 — FINAL WEEK</h2>
+      <span class="week-dates">June 15 – June 21</span>
+      <span class="week-deficit" style="background: var(--accent); color: #000; font-weight: 700;">🏆 Goal Date: June 21</span>
+    </div>
+    <div class="days-grid">
+      <div class="day-cell">
+        <div class="day-name">Mon</div><div class="day-date" style="color:var(--accent)">15</div>
+        <div class="session-badge badge-push">Push</div>
+        <div class="session-detail"><strong>Last Push A</strong>Give everything.<div class="cardio-tag">HIIT 20 min</div></div>
+      </div>
+      <div class="day-cell">
+        <div class="day-name">Tue</div><div class="day-date" style="color:var(--accent)">16</div>
+        <div class="session-badge badge-pull">Pull</div>
+        <div class="session-detail"><strong>Last Pull A</strong>All pull movements.<div class="cardio-tag">Steady 25 min</div></div>
+      </div>
+      <div class="day-cell">
+        <div class="day-name">Wed</div><div class="day-date" style="color:var(--accent)">17</div>
+        <div class="session-badge badge-legs">Legs</div>
+        <div class="session-detail"><strong>Last Legs A</strong>All leg movements.<div class="cardio-tag">Bike 20 min</div></div>
+      </div>
+      <div class="day-cell">
+        <div class="day-name">Thu</div><div class="day-date" style="color:var(--accent)">18</div>
+        <div class="session-badge badge-push">Push</div>
+        <div class="session-detail"><strong>Last Push B</strong>All push movements.<div class="cardio-tag">HIIT 20 min</div></div>
+      </div>
+      <div class="day-cell">
+        <div class="day-name">Fri</div><div class="day-date" style="color:var(--accent)">19</div>
+        <div class="session-badge badge-pull">Pull</div>
+        <div class="session-detail"><strong>Last Pull B</strong>All pull movements.<div class="cardio-tag">Steady 25 min</div></div>
+      </div>
+      <div class="day-cell">
+        <div class="day-name">Sat</div><div class="day-date" style="color:var(--accent)">20</div>
+        <div class="session-badge badge-legs">Legs</div>
+        <div class="session-detail"><strong>Last Legs B</strong>Finish strong.<div class="cardio-tag">Bike 20 min</div></div>
+      </div>
+      <div class="day-cell" style="background: linear-gradient(135deg, #0f1f0a, #0a1a14);">
+        <div class="day-name">Sun</div>
+        <div class="day-date" style="color:var(--accent); font-size: 32px;">21</div>
+        <div class="session-badge" style="background:#c8f56233;color:var(--accent);border:1px solid var(--accent);">🏆 Goal</div>
+        <div class="session-detail"><strong style="color:var(--accent)">Weigh In Day</strong>Target: 155 lbs. You did it. 💪</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- DIET PLAN -->
+
+<div class="diet-section">
+  <div class="diet-header">
+    <div>
+      <h2>Daily Diet Plan</h2>
+      <p>Repeat every day · Adjust portions if weight loss stalls</p>
+    </div>
+    <div style="text-align:right; font-family:'DM Mono',monospace; font-size:11px; color:var(--muted);">
+      1,870 cal &nbsp;·&nbsp; 150g protein &nbsp;·&nbsp; 198g carbs &nbsp;·&nbsp; 57g fat
+    </div>
+  </div>
+  <div class="diet-grid">
+    <div class="meal-card">
+      <div class="meal-time">Breakfast</div>
+      <div class="meal-title">Eggs & Berries</div>
+      <ul class="meal-items">
+        <li>3 scrambled eggs (olive oil)</li>
+        <li>1 cup plain Greek yogurt</li>
+        <li>1 banana</li>
+        <li>1 cup strawberries</li>
+      </ul>
+      <div class="meal-macros">
+        <div class="macro-chip p">35g P</div>
+        <div class="macro-chip">46g C</div>
+        <div class="macro-chip">15g F</div>
+        <div class="macro-chip">470 cal</div>
+      </div>
+    </div>
+    <div class="meal-card">
+      <div class="meal-time">Lunch</div>
+      <div class="meal-title">Tuna & Tropics</div>
+      <ul class="meal-items">
+        <li>1 can albacore tuna (GG)</li>
+        <li>1 whole mango</li>
+        <li>1 cup pineapple chunks</li>
+        <li>½ avocado</li>
+      </ul>
+      <div class="meal-macros">
+        <div class="macro-chip p">38g P</div>
+        <div class="macro-chip">71g C</div>
+        <div class="macro-chip">11g F</div>
+        <div class="macro-chip">520 cal</div>
+      </div>
+    </div>
+    <div class="meal-card">
+      <div class="meal-time">Snack</div>
+      <div class="meal-title">Yogurt & Apple</div>
+      <ul class="meal-items">
+        <li>1 cup plain Greek yogurt</li>
+        <li>1 apple</li>
+        <li>1 oz raw almonds</li>
+        <li>GT's Kombucha 16 oz 🫧</li>
+      </ul>
+      <div class="meal-macros">
+        <div class="macro-chip p">23g P</div>
+        <div class="macro-chip">37g C</div>
+        <div class="macro-chip">14g F</div>
+        <div class="macro-chip">360 cal</div>
+      </div>
+    </div>
+    <div class="meal-card">
+      <div class="meal-time">Dinner</div>
+      <div class="meal-title">Tuna & Eggs</div>
+      <ul class="meal-items">
+        <li>1 can albacore tuna (GG)</li>
+        <li>3 fried eggs</li>
+        <li>2 cups sautéed spinach</li>
+        <li>1 orange + 1 cup grapes</li>
+      </ul>
+      <div class="meal-macros">
+        <div class="macro-chip p">54g P</div>
+        <div class="macro-chip">44g C</div>
+        <div class="macro-chip">17g F</div>
+        <div class="macro-chip">520 cal</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+
+<div class="footer">
+  <div class="info-box">
+    <h3>Key Rules</h3>
+    <ul>
+      <li><strong>Hit 150g protein every single day</strong> — this is non-negotiable for preserving muscle on a cut</li>
+      <li><strong>Progressive overload</strong> — add 2.5–5 lbs to main lifts every week</li>
+      <li><strong>HIIT after Push only</strong> — legs get steady/low-impact cardio to avoid overtraining</li>
+      <li><strong>Drink 3L of water daily</strong> — especially with the high fruit carb load</li>
+      <li><strong>Don't skip rest day</strong> — at 6x/week intensity, Sunday recovery is part of the plan</li>
+      <li><strong>Weigh in every Sunday morning</strong> — fasted, same time each week</li>
+      <li><strong>Kombucha post-snack</strong> — gut reset and light electrolyte replenishment 🫧</li>
+    </ul>
+  </div>
+  <div class="projection-box">
+    <h3>📊 Final Projection</h3>
+    <div class="proj-row"><span class="pk">Daily diet</span><span class="pv">1,870 cal</span></div>
+    <div class="proj-row"><span class="pk">Est. TDEE (6x/week)</span><span class="pv">~3,400–3,600 cal</span></div>
+    <div class="proj-row"><span class="pk">Daily deficit</span><span class="pv">~1,530–1,730 cal</span></div>
+    <div class="proj-row"><span class="pk">Weekly fat loss</span><span class="pv">~2.9–3.2 lbs</span></div>
+    <div class="proj-row"><span class="pk">Total days</span><span class="pv">48 days</span></div>
+    <div class="proj-row"><span class="pk">Start weight</span><span class="pv">170 lbs</span></div>
+    <div class="proj-row"><span class="pk">Projected June 21</span><span class="pv green">✅ 155 lbs</span></div>
+  </div>
+</div>
+
+</body>
+</html>
