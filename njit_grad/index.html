@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NJIT Master's Graduation — Guest Instructions</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --red: #cc0033;
+      --dark: #0d0d0d;
+      --offwhite: #f5f2ed;
+      --gold: #c9a84c;
+      --muted: #6b6458;
+      --card-bg: #ffffff;
+      --border: #e8e3db;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background-color: var(--offwhite);
+      color: var(--dark);
+      min-height: 100vh;
+      padding: 0;
+    }
+
+    /* HERO HEADER */
+    header {
+      background-color: var(--dark);
+      color: white;
+      padding: 56px 40px 48px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 320px; height: 320px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(204,0,51,0.25) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    header::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--red), var(--gold), var(--red));
+    }
+
+    .header-label {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 5vw, 46px);
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 28px;
+    }
+
+    header h1 span {
+      color: var(--red);
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-top: 8px;
+    }
+
+    .meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .meta-label {
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 500;
+    }
+
+    .meta-value {
+      font-size: 14px;
+      color: rgba(255,255,255,0.9);
+      font-weight: 300;
+      line-height: 1.4;
+    }
+
+    /* MAIN */
+    main {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 13px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 24px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* STEPS */
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+
+    .step {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 24px 28px;
+      display: grid;
+      grid-template-columns: 44px 1fr;
+      gap: 20px;
+      align-items: start;
+      transition: box-shadow 0.2s;
+    }
+
+    .step:hover {
+      box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+    }
+
+    .step-number {
+      width: 44px;
+      height: 44px;
+      background: var(--dark);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .step-body h3 {
+      font-size: 15px;
+      font-weight: 500;
+      margin-bottom: 8px;
+      color: var(--dark);
+    }
+
+    .step-body p, .step-body li {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.65;
+      font-weight: 300;
+    }
+
+    .step-body ul {
+      padding-left: 0;
+      list-style: none;
+      margin-top: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .step-body ul li::before {
+      content: '→';
+      color: var(--red);
+      margin-right: 8px;
+      font-size: 12px;
+    }
+
+    .step-body a {
+      color: var(--red);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .step-body a:hover { text-decoration: underline; }
+
+    .highlight {
+      background: #fff8f0;
+      border-left: 3px solid var(--gold);
+      padding: 10px 14px;
+      border-radius: 0 6px 6px 0;
+      margin-top: 10px;
+      font-size: 13px;
+      color: #5a4a2f;
+      font-weight: 400;
+      line-height: 1.55;
+    }
+
+    /* PROHIBITED ITEMS */
+    .prohibited-grid {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 28px;
+      margin-bottom: 40px;
+    }
+
+    .prohibited-grid ul {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .prohibited-grid ul li {
+      font-size: 13px;
+      color: var(--muted);
+      font-weight: 300;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      line-height: 1.4;
+    }
+
+    .prohibited-grid ul li::before {
+      content: '✕';
+      color: var(--red);
+      font-size: 11px;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    /* FOOTER NOTE */
+    .footer-note {
+      background: var(--dark);
+      color: rgba(255,255,255,0.75);
+      border-radius: 10px;
+      padding: 24px 28px;
+      font-size: 13px;
+      line-height: 1.65;
+      font-weight: 300;
+    }
+
+    .footer-note strong {
+      color: var(--gold);
+      font-weight: 500;
+    }
+
+    .footer-note a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-label">New Jersey Institute of Technology</div>
+    <h1>Master's Graduation<br><span>Guest Instructions</span></h1>
+    <div class="meta-grid">
+      <div class="meta-item">
+        <span class="meta-label">📍 Venue</span>
+        <span class="meta-value">Joel & Diane Bloom Wellness and Events Center (BWEC)<br>120 Lock Street, Newark, NJ 07102</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">📅 Date</span>
+        <span class="meta-value">Wednesday, May 20, 2026</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">🕙 Ceremony</span>
+        <span class="meta-value">10:00 AM</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">🚪 Doors Open</span>
+        <span class="meta-value">9:00 AM</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <p class="section-title">Step-by-Step Guide for Guests</p>
+
+    <div class="steps">
+
+      <div class="step">
+        <div class="step-number">1</div>
+        <div class="step-body">
+          <h3>Get Your Ticket</h3>
+          <p>You'll receive your guest ticket from me electronically. Please <strong>print it out before the day of the ceremony</strong> — digital/mobile tickets are not accepted at the door. Arriving without a printed ticket will cause significant delays getting in.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-number">2</div>
+        <div class="step-body">
+          <h3>Arrive Early</h3>
+          <p>Doors open at 9:00 AM — one full hour before the ceremony. Plan to arrive right at 9:00 AM to allow time for parking, security screening, and finding a good seat. Note that it's a weekday, so expect heavier-than-normal traffic around the NJIT campus.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-number">3</div>
+        <div class="step-body">
+          <h3>Getting There</h3>
+          <p>Full driving and public transit directions to NJIT are available at:</p>
+          <ul>
+            <li><a href="https://www.njit.edu/about/visit/gettingtonjit.php" target="_blank">njit.edu/about/visit</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-number">4</div>
+        <div class="step-body">
+          <h3>Parking (Free!)</h3>
+          <p>Free parking is available at two NJIT parking decks. Carpooling is strongly encouraged due to multiple ceremonies happening on the same day.</p>
+          <ul>
+            <li>Science & Technology Park Garage — 42 Wilsey Street, Newark, NJ</li>
+            <li>Parking Deck — 154 Summit Street, Newark, NJ</li>
+          </ul>
+          <div class="highlight">📌 View the campus parking map at <a href="https://www.njit.edu/parking/campus-parking-map-0/" target="_blank">njit.edu/parking/campus-parking-map-0</a></div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-number">5</div>
+        <div class="step-body">
+          <h3>Bag Policy — Travel Light</h3>
+          <p>To get through security quickly, please follow the bag rules strictly:</p>
+          <ul>
+            <li>Only soft-sided clutches or purses <strong>under 4" × 7"</strong> are allowed</li>
+            <li><strong>No backpacks</strong> of any kind</li>
+            <li>Medical or childcare bags under 12" × 16" × 6" are permitted but will be inspected</li>
+          </ul>
+          <div class="highlight">⚠️ Bags that don't comply must be returned to your vehicle before entry.</div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-number">6</div>
+        <div class="step-body">
+          <h3>Seating</h3>
+          <p>All guest seating is <strong>general admission — first come, first served.</strong> No reserving or blocking seats is permitted. Arriving early (Step 2!) is your best bet for a great spot.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-number">7</div>
+        <div class="step-body">
+          <h3>Can't Make It? Watch the Live Stream</h3>
+          <p>The ceremony will be live streamed at <a href="https://www.njit.edu" target="_blank">njit.edu</a> — so you can still celebrate along from anywhere!</p>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="section-title">Prohibited Items — Do Not Bring</p>
+
+    <div class="prohibited-grid">
+      <p style="font-size:13px;color:var(--muted);font-weight:300;">Guests found with prohibited items will be denied entry or ejected from the venue.</p>
+      <ul>
+        <li>Outside food or drinks</li>
+        <li>Strollers</li>
+        <li>Wrapped gifts or packages</li>
+        <li>Balloons, beach balls, frisbees</li>
+        <li>Selfie sticks or GoPros</li>
+        <li>Air horns, whistles, vuvuzelas</li>
+        <li>Signs larger than 8½" × 11"</li>
+        <li>Backpacks or large bags</li>
+        <li>Alcohol or illegal substances</li>
+        <li>Aerosol cans or sprays</li>
+        <li>Drones or unmanned aircraft</li>
+        <li>Weapons of any kind</li>
+        <li>Laser pens or pointers</li>
+        <li>Professional camera equipment</li>
+        <li>Skateboards or hoverboards</li>
+        <li>Animals or pets (except service animals)</li>
+      </ul>
+    </div>
+
+    <div class="footer-note">
+      <strong>♿ Accessibility Needs?</strong><br>
+      Accessible parking is available in Lots 5 and 10. Wheelchair assistance is available inside the BWEC on a first-come, first-served basis — please bring your own wheelchair for use outside the building. Drop-off is available curbside at 100 Lock Street.<br><br>
+      For sign language interpreter requests or any other assistance, contact NJIT at <a href="mailto:commencement@njit.edu">commencement@njit.edu</a>
+    </div>
+
+  </main>
+
+</body>
+</html>
